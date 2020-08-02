@@ -1,13 +1,17 @@
 <template>
   <div class="card">
     <div class="card-image">
-      <figure class="image is-4by3">
-        <sanity-image :image="image" :alt="title" :width="640" :height="480" />
+      <figure class="image">
+        <sanity-image :image="image" :alt="title" :width="480" :height="480" />
       </figure>
     </div>
-    <div class="card-content">
+    <div class="card-content has-background-white-bis">
       <div class="media">
-        <div class="media-left">
+        <div class="media-content">
+          <p class="title is-5">{{ title }}</p>
+          <p class="subtitle is-5">{{ price }} €</p>
+        </div>
+        <div class="media-right">
           <figure class="image is-48x48">
             <sanity-image
               :image="vendor.logo"
@@ -16,10 +20,6 @@
               :height="96"
             />
           </figure>
-        </div>
-        <div class="media-content">
-          <p class="title is-4">{{ title }}</p>
-          <p class="subtitle is-6">{{ price }} €</p>
         </div>
       </div>
 

@@ -13,7 +13,28 @@
 
     <div class="column is-two-third">
       <h1 class="title is-2">{{ product.title }}</h1>
-      <buy-button v-bind="product" :url="productUrl" />
+
+      <b-taglist v-if="product.categories.length">
+        <b-tag
+          v-for="category in product.categories"
+          :key="category._id"
+          class="is-rounded"
+        >
+          <nuxt-link
+            class="is-light"
+            :to="{
+              name: 'products-categories-slug',
+              params: { slug: category.slug.current },
+            }"
+          >
+            {{ category.title }}
+          </nuxt-link>
+        </b-tag>
+      </b-taglist>
+
+      <div class="buttons has-addons">
+        <buy-button v-bind="product" :url="productUrl" />
+      </div>
     </div>
   </section>
 </template>
@@ -28,7 +49,7 @@ export default {
   },
   computed: {
     productUrl() {
-      return `${process.dev ? 'https://ee55ceeed85e.ngrok.io' : ''}${
+      return `${process.dev ? 'https://4ee0bd65d7af.ngrok.io' : ''}${
         this.$route.path
       }`
     },

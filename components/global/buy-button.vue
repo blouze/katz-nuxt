@@ -8,7 +8,12 @@
     :data-item-image="$imgBuilder.image(image).width(92).url()"
     :data-item-url="url"
   >
-    Buy
+    <span class="icon">
+      <b-icon icon="shopping-cart" size="is-small" />
+    </span>
+    <span>
+      Buy
+    </span>
   </button>
 </template>
 

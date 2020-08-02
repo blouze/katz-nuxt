@@ -38,6 +38,7 @@ export default {
     imageUrl() {
       return this.$imgBuilder
         .image(this.image)
+        .ignoreImageParams()
         .size(this.width, this.height)
         .auto(this.auto)
         .fit(this.fit)

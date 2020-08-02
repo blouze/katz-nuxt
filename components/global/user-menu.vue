@@ -1,17 +1,17 @@
 <template>
-  <a class="navbar-item has-dropdown is-hoverable">
+  <a ref="dropdown" class="navbar-item has-dropdown is-hoverable">
     <a class="navbar-link">{{ user.username }}</a>
 
     <div class="navbar-dropdown">
-      <nuxt-link class="navbar-item" :to="{ name: 'user' }">
-        <span class="icon"><b-icon icon="user" /></span>
+      <nuxt-link class="navbar-item" :to="{ name: 'user-account' }">
+        <span class="icon"><b-icon icon="user" size="is-small" /></span>
         <span>Profile</span>
       </nuxt-link>
 
       <hr class="navbar-divider" />
 
-      <a class="navbar-item" @click="$auth.logout()">
-        <span class="icon"><b-icon icon="sign-out-alt" /></span>
+      <a class="navbar-item" @click="logout">
+        <span class="icon"><b-icon icon="sign-out-alt" size="is-small" /></span>
         <span>Logout</span>
       </a>
     </div>
@@ -26,6 +26,18 @@ export default {
       type: Object,
       required: true,
       default: () => ({}),
+    },
+  },
+  watch: {
+    '$route.path'() {
+      this.$refs.dropdown.classList.remove('is-active')
+    },
+  },
+  methods: {
+    logout(e) {
+      e.preventDefault()
+      this.$buefy.snackbar.open('Vous êtes maintenant déconnecté.')
+      this.$auth.logout()
     },
   },
 }

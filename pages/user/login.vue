@@ -1,29 +1,38 @@
 <template>
-  <div>
-    <section class="section hero is-small">
-      <div class="hero-body">
-        <h1 class="title is-1">
-          Connexion
-        </h1>
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <h1 class="title is-1">
+        Connexion
+      </h1>
+    </div>
+
+    <div class="columns">
+      <login-form
+        class="column is-two-thirds"
+        :disabled="submitted"
+        :loading="submitted"
+        @submit="submit"
+      />
+
+      <div class="column is-third">
+        <div v-if="errors">
+          <p
+            v-for="{ id, message } in errors"
+            :key="id"
+            class="has-text-danger"
+          >
+            {{ message }}
+          </p>
+        </div>
       </div>
-    </section>
+    </div>
 
-    <section>
-      <login-form :disabled="submitted" :loading="submitted" @submit="submit" />
-    </section>
-
-    <section v-if="errors">
-      <p v-for="{ id, message } in errors" :key="id" class="has-text-danger">
-        {{ message }}
-      </p>
-    </section>
-
-    <section>
+    <p>
       <nuxt-link :to="{ name: 'user-lost-password' }"
         >Mot de passe oublié ?</nuxt-link
       >
-    </section>
-  </div>
+    </p>
+  </section>
 </template>
 
 <script>
@@ -38,6 +47,7 @@ export default {
         .loginWith('local', { data: params })
         .then(({ data: { jwt, user } }) => {
           // console.log(jwt, user)
+          this.$buefy.snackbar.open('Vous êtes connecté.')
           this.$auth.setUser(user)
         })
     },

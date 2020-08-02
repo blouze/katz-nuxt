@@ -18,14 +18,14 @@
             :placeholder="!!placeholder ? placeholder : label"
             :type="password ? 'password' : 'input'"
           />
-          <span v-if="icon" class="icon is-small is-left">
-            <b-icon :icon="icon" />
+          <span v-if="icon" class="icon is-left">
+            <b-icon :icon="icon" size="is-small" />
           </span>
           <span
             v-if="validation.$dirty && validation.$invalid"
-            class="icon is-small is-right has-text-danger"
+            class="icon is-right has-text-danger"
           >
-            <b-icon icon="exclamation-triangle" />
+            <b-icon icon="exclamation-triangle" size="is-small" />
           </span>
         </div>
         <p

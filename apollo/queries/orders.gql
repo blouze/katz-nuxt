@@ -1,0 +1,7 @@
+query Orders {
+  orders {
+    id, token, createdAt,
+    summary { total,  paymentMethod },
+    items { id, name, url, image, quantity, unitPrice, totalPrice }
+  }
+}

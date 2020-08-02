@@ -34,7 +34,11 @@ export default {
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
    */
-  plugins: [{ src: '~plugins/sanity' }, { src: '~plugins/vuelidate' }],
+  plugins: [
+    { src: '~plugins/sanity' },
+    { src: '~plugins/vuelidate' },
+    { src: '~plugins/date' },
+  ],
   /*
    ** Auto import components
    ** See https://nuxtjs.org/api/configuration-components
@@ -62,6 +66,8 @@ export default {
     '@nuxt/content',
     '@nuxtjs/auth',
     '@nuxtjs/ngrok',
+    // Doc: https://github.com/nuxt-community/apollo-module
+    '@nuxtjs/apollo',
   ],
   /*
    ** Axios module configuration
@@ -78,6 +84,11 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+
+  generate: {
+    exclude: [/user/],
+  },
+
   /*
    ** Environment variables
    ** See https://nuxtjs.org/api/configuration-env/
@@ -88,6 +99,7 @@ export default {
     sanityDataset: process.env.SANITY_DATASET || '',
     snipcartApiKey: process.env.SNIPCART_API_KEY || '',
   },
+
   /*
    ** Auth module configuration
    ** See https://auth.nuxtjs.org/schemes/local.html#options
@@ -115,9 +127,11 @@ export default {
       login: '/user/login',
       logout: '/user/login',
       callback: false,
-      home: '/user',
+      home: '/user/account/profile',
     },
+    plugins: ['~/plugins/auth.js'],
   },
+
   buefy: {
     materialDesignIcons: false,
     defaultIconPack: 'fas',
@@ -139,7 +153,17 @@ export default {
         'faLock',
         'faSignOutAlt',
         'faShoppingCart',
+        'faAngleRight',
+        'faArrowUp',
       ],
+    },
+  },
+
+  apollo: {
+    clientConfigs: {
+      default: {
+        httpEndpoint: `${process.env.BACKEND_URL}/graphql`,
+      },
     },
   },
 }

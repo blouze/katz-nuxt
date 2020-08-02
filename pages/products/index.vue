@@ -6,7 +6,7 @@
       :to="`/products/${product.slug.current}`"
       class="column is-one-third"
     >
-      <ProductCard v-bind="product" />
+      <product-card v-bind="product" />
     </nuxt-link>
   </section>
 </template>
