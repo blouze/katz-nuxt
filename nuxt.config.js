@@ -24,12 +24,18 @@ export default {
         content: process.env.npm_package_description || '',
       },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css?family=Assistant&display=swap',
+      },
+    ],
   },
   /*
    ** Global CSS
    */
-  css: [],
+  css: ['@/assets/styles/index.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -86,7 +92,7 @@ export default {
   build: {},
 
   generate: {
-    exclude: [/user/],
+    // exclude: [/user\/account/],
   },
 
   /*
@@ -133,6 +139,7 @@ export default {
   },
 
   buefy: {
+    css: false,
     materialDesignIcons: false,
     defaultIconPack: 'fas',
     defaultIconComponent: 'font-awesome-icon',

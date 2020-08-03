@@ -1,6 +1,6 @@
 <template>
   <nav
-    class="navbar is-fixed-top"
+    class="navbar is-fixed-top is-brand"
     role="navigation"
     aria-label="main navigation"
   >
@@ -73,6 +73,11 @@ export default {
     links: [{ to: { name: 'products' }, text: 'Products' }],
     menuOpen: false,
   }),
+  watch: {
+    '$route.path'() {
+      this.menuOpen = false
+    },
+  },
   methods: {
     isRouteActive(routeName) {
       return this.$route.name === routeName

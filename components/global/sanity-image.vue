@@ -30,6 +30,10 @@ export default {
       type: String,
       default: 'max',
     },
+    bg: {
+      type: String,
+      default: 'FFFFFF',
+    },
   },
   computed: {
     altFromImage() {
@@ -41,6 +45,7 @@ export default {
         .ignoreImageParams()
         .size(this.width, this.height)
         .auto(this.auto)
+        .bg(this.bg)
         .fit(this.fit)
     },
   },

@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="section">
-      <h1 class="title is-1">{{ category.title }}</h1>
+      <h1 class="title is-1">{{ vendor.title }}</h1>
 
       <div class="columns is-multiline">
         <nuxt-link
@@ -21,10 +21,10 @@
 </template>
 
 <script>
-import query from '~/groq/queries/categories'
+import query from '~/groq/queries/vendor'
 
 export default {
-  name: 'CategoryPage',
+  name: 'BrandPage',
   async asyncData({ $sanity, params }) {
     return await $sanity.fetch(query, params)
   },

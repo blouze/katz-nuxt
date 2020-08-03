@@ -3,7 +3,7 @@
     <div class="field-label is-normal" />
     <div class="field-body">
       <button
-        class="button is-link is-fullwidth"
+        class="button is-link is-primary is-fullwidth"
         :disabled="disabled"
         :class="{ 'is-loading': loading }"
       >

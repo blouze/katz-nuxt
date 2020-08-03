@@ -4,7 +4,7 @@
       v-for="product in products"
       :key="product._id"
       :to="`/products/${product.slug.current}`"
-      class="column is-one-third"
+      class="column is-half-tablet is-one-third-widescreen is-one-quarter-fullhd"
     >
       <product-card v-bind="product" />
     </nuxt-link>
@@ -21,3 +21,8 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus">
+.card
+  color: $primary
+</style>

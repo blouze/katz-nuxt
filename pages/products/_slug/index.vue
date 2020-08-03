@@ -1,39 +1,72 @@
 <template>
-  <section class="section columns">
-    <div class="column is-one-third">
-      <figure class="image">
-        <sanity-image
-          :image="product.image"
-          :alt="product.title"
-          :width="500"
-          :height="500"
-        />
-      </figure>
-    </div>
+  <section class="section">
+    <h1 class="title is-3">{{ product.title }}</h1>
 
-    <div class="column is-two-third">
-      <h1 class="title is-2">{{ product.title }}</h1>
+    <div class="columns">
+      <div class="column is-one-third">
+        <figure class="image">
+          <sanity-image
+            :image="product.image"
+            :alt="product.title"
+            :width="500"
+            :height="500"
+          />
+        </figure>
+      </div>
 
-      <b-taglist v-if="product.categories.length">
-        <b-tag
-          v-for="category in product.categories"
-          :key="category._id"
-          class="is-rounded"
-        >
-          <nuxt-link
-            class="is-light"
-            :to="{
-              name: 'products-categories-slug',
-              params: { slug: category.slug.current },
-            }"
+      <div class="column is-two-third">
+        <b-taglist v-if="product.categories.length">
+          <b-tag
+            v-for="category in product.categories"
+            :key="category._id"
+            class="is-rounded is-medium"
           >
-            {{ category.title }}
-          </nuxt-link>
-        </b-tag>
-      </b-taglist>
+            <nuxt-link
+              class="is-light"
+              :to="{
+                name: 'products-categories-slug',
+                params: { slug: category.slug.current },
+              }"
+            >
+              {{ category.title }}
+            </nuxt-link>
+          </b-tag>
+        </b-taglist>
 
-      <div class="buttons has-addons">
-        <buy-button v-bind="product" :url="productUrl" />
+        <div class="media">
+          <div class="media-left">
+            <nuxt-link
+              :to="{
+                name: 'products-brands-slug',
+                params: { slug: product.vendor.slug.current },
+              }"
+            >
+              <figure class="image is-48x48">
+                <sanity-image
+                  :image="product.vendor.logo"
+                  :alt="product.vendor.title"
+                  :width="96"
+                  :height="96"
+                />
+              </figure>
+            </nuxt-link>
+          </div>
+
+          <div class="media-content">
+            <p class="subtitle tag is-secondary is-rounded is-large">
+              {{ product.price }} €
+            </p>
+          </div>
+        </div>
+
+        <div class="level">
+          <div class="level-left"></div>
+          <div class="level-right">
+            <div class="level-item">
+              <buy-button v-bind="product" :url="productUrl" />
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>

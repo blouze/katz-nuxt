@@ -5,7 +5,7 @@ export default groq`{
     _id, title, slug, blurb,
     "image": defaultProductVariant.images[0],
     "price": defaultProductVariant.price,
-    vendor-> { title, logo },
+    vendor-> { title, logo, slug },
     categories[]-> {
       _id, title, slug,
     }

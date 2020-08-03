@@ -2,7 +2,7 @@
   <a ref="dropdown" class="navbar-item has-dropdown is-hoverable">
     <a class="navbar-link">{{ user.username }}</a>
 
-    <div class="navbar-dropdown">
+    <div class="navbar-dropdown is-right">
       <nuxt-link class="navbar-item" :to="{ name: 'user-account' }">
         <span class="icon"><b-icon icon="user" size="is-small" /></span>
         <span>Profile</span>
@@ -26,11 +26,6 @@ export default {
       type: Object,
       required: true,
       default: () => ({}),
-    },
-  },
-  watch: {
-    '$route.path'() {
-      this.$refs.dropdown.classList.remove('is-active')
     },
   },
   methods: {

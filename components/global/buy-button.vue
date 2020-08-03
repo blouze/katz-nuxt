@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button is-primary snipcart-add-item"
+    class="button is-primary is-medium is-fullwidth snipcart-add-item"
     :data-item-id="_id"
     :data-item-name="title"
     :data-item-price="price"
