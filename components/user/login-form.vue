@@ -2,6 +2,7 @@
   <form @submit="checkForm">
     <fieldset :disabled="disabled">
       <form-input
+        id="identifier"
         label="identifier"
         placeholder="identifier"
         icon="user"
@@ -9,6 +10,7 @@
       />
 
       <form-input
+        id="password"
         label="password"
         icon="lock"
         :validation="$v.password"

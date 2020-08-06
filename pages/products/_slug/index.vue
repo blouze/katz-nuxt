@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <h1 class="title is-3">{{ product.title }}</h1>
+    <h1 class="title is-2">{{ product.title }}</h1>
 
     <div class="columns">
       <div class="column is-one-third">
@@ -47,6 +47,7 @@
                   :alt="product.vendor.title"
                   :width="96"
                   :height="96"
+                  fit="fill"
                 />
               </figure>
             </nuxt-link>
@@ -69,6 +70,10 @@
         </div>
       </div>
     </div>
+
+    <!-- <client-only>
+      <product-availability :id="product._id" />
+    </client-only> -->
   </section>
 </template>
 

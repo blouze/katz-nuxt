@@ -13,6 +13,7 @@
           :class="{ 'has-icons-left': !!icon }"
         >
           <input
+            :id="id"
             v-model="validation.$model"
             class="input"
             :placeholder="!!placeholder ? placeholder : label"
@@ -43,6 +44,10 @@
 export default {
   name: 'FormInput',
   props: {
+    id: {
+      type: String,
+      required: true,
+    },
     label: {
       type: String,
       default: '',

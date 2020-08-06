@@ -47,8 +47,8 @@ export default {
         .loginWith('local', { data: params })
         .then(({ data: { jwt, user } }) => {
           // console.log(jwt, user)
+          this.$auth.setUserToken(jwt)
           this.$buefy.snackbar.open('Vous êtes connecté.')
-          this.$auth.setUser(user)
         })
     },
   },

@@ -1,9 +1,15 @@
 <template>
   <form @submit="checkForm">
     <fieldset :disabled="disabled">
-      <form-input label="username" icon="user" :validation="$v.username" />
+      <form-input
+        id="username"
+        label="username"
+        icon="user"
+        :validation="$v.username"
+      />
 
       <form-input
+        id="email"
         label="email"
         placeholder="e-mail"
         icon="envelope"
@@ -11,6 +17,7 @@
       />
 
       <form-input
+        id="password"
         label="password"
         icon="lock"
         :validation="$v.password"

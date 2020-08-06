@@ -20,13 +20,14 @@
               :alt="vendor.title"
               :width="96"
               :height="96"
+              fit="fill"
             />
           </figure>
         </div>
         <div class="media-content">
           <p class="title is-5">{{ title }}</p>
           <p class="subtitle is-5">
-            <span class="tag is-secondary is-medium"> {{ price }} € </span>
+            <span class="tag is-secondary"> {{ price }} € </span>
           </p>
         </div>
       </div>

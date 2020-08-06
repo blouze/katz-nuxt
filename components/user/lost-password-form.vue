@@ -2,6 +2,7 @@
   <form @submit="checkForm">
     <fieldset :disabled="disabled">
       <form-input
+        id="email"
         label="email"
         placeholder="email"
         icon="user"
