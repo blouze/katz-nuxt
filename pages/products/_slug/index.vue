@@ -1,6 +1,6 @@
 <template>
   <section class="section">
-    <h1 class="title is-2">{{ product.title }}</h1>
+    <h1 class="title is-1">{{ product.title }}</h1>
 
     <div class="columns">
       <div class="column is-one-third">
@@ -10,6 +10,7 @@
             :alt="product.title"
             :width="500"
             :height="500"
+            fit="fill"
           />
         </figure>
       </div>

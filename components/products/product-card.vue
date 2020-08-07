@@ -1,5 +1,5 @@
 <template>
-  <div class="card is-shadowless">
+  <div class="card is-shadowless has-background-white-bis">
     <div class="card-image">
       <figure class="image">
         <sanity-image
@@ -20,6 +20,7 @@
               :alt="vendor.title"
               :width="96"
               :height="96"
+              bg="fafafa"
               fit="fill"
             />
           </figure>
@@ -31,8 +32,6 @@
           </p>
         </div>
       </div>
-
-      <div class="content"></div>
     </div>
   </div>
 </template>
@@ -50,3 +49,5 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus" scoped></style>

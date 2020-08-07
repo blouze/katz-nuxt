@@ -36,6 +36,13 @@ export default {
    ** Global CSS
    */
   css: ['@/assets/styles/index.scss'],
+  styleResources: {
+    // your settings here
+    sass: [],
+    scss: ['@/assets/styles/variables.scss'],
+    less: [],
+    stylus: [],
+  },
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -57,15 +64,17 @@ export default {
     // Doc: https://github.com/nuxt-community/eslint-module
     '@nuxtjs/eslint-module',
     '@nuxtjs/pwa',
+    // Doc: https://buefy.github.io/#/documentation
+    'nuxt-buefy',
+    // Doc: https://github.com/nuxt-community/fontawesome-module
+    '@nuxtjs/fontawesome',
+    // Doc: https://github.com/nuxt-community/style-resources-module#readme
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Nuxt.js modules
    */
   modules: [
-    // Doc: https://buefy.github.io/#/documentation
-    'nuxt-buefy',
-    // Doc: https://github.com/nuxt-community/fontawesome-module
-    '@nuxtjs/fontawesome',
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
