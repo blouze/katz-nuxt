@@ -11,16 +11,6 @@
     :loading="$apollo.loading"
   >
     <template slot-scope="props">
-      <b-table-column
-        field="creationDate"
-        label="Date"
-        sortable
-        width="120"
-        class="has-text-right"
-      >
-        {{ $date.formatDate(props.row.creationDate) }}
-      </b-table-column>
-
       <b-table-column field="invoiceNumber" label="Reference" sortable>
         <a @click="toggleDetails(props.row)">
           {{ props.row.invoiceNumber }}
@@ -41,6 +31,20 @@
         class="has-text-right"
       >
         <strong>{{ props.row.summary.total }}€</strong>
+      </b-table-column>
+
+      <b-table-column
+        field="creationDate"
+        label="Date"
+        sortable
+        width="120"
+        class="has-text-right"
+      >
+        {{ $date.formatDate(props.row.creationDate) }}
+      </b-table-column>
+
+      <b-table-column field="status" label="Status" sortable width="100">
+        {{ props.row.status }}
       </b-table-column>
     </template>
 

@@ -1,9 +1,10 @@
 query {
   customerOrders {
-    token,
-    invoiceNumber,
-    summary,
-    items,
+    token
+    invoiceNumber
+    summary
+    items
     creationDate
+    status
   }
 }

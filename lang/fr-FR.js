@@ -6,6 +6,15 @@ export default {
     title: 'Produits',
     buy: 'Ajouter',
   },
+  orders: {
+    Processed: 'Processed',
+    Disputed: 'Disputed',
+    Shipped: 'Shipped',
+    Delivered: 'Delivered',
+    Pending: 'Pending',
+    Cancelled: 'Cancelled',
+    Dispatched: 'Dispatched',
+  },
   user: {
     profile: 'Compte',
     orders: 'Commandes',
