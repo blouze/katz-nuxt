@@ -1,7 +1,7 @@
 <template>
   <div class="field is-horizontal">
     <div class="field-label is-normal">
-      <label class="label">
+      <label class="label" :for="id">
         {{ label }}&nbsp;:
         <slot name="label" />
       </label>

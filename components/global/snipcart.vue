@@ -24,6 +24,7 @@ export default {
     script: [
       {
         src: 'https://cdn.snipcart.com/themes/v3.0.19/default/snipcart.js',
+        defer: true,
       },
     ],
   }),

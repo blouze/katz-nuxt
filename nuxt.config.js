@@ -25,6 +25,7 @@ export default {
       },
     ],
     link: [
+      { rel: 'preconnect', href: 'https://cdn.jsdelivr.net' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
