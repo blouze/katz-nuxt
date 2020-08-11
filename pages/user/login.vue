@@ -28,7 +28,7 @@
     </div>
 
     <p>
-      <nuxt-link :to="{ name: 'user-lost-password' }"
+      <nuxt-link :to="localeRoute({ name: 'user-lost-password' })"
         >Mot de passe oublié ?</nuxt-link
       >
     </p>
@@ -39,6 +39,7 @@
 import { form } from '~/mixins'
 
 export default {
+  name: 'LoginPage',
   auth: 'guest',
   mixins: [form],
   methods: {

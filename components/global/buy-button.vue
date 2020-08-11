@@ -12,7 +12,7 @@
       <b-icon icon="shopping-cart" size="is-small" />
     </span>
     <span>
-      Buy
+      {{ $t('products.buy') }}
     </span>
   </button>
 </template>

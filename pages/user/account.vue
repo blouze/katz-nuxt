@@ -6,9 +6,11 @@
           <li
             v-for="{ label, route, icon } in tabs"
             :key="route.name"
-            :class="{ 'is-active': $route.name === route.name }"
+            :class="{
+              'is-active': $route.name === localeRoute(route.name).name,
+            }"
           >
-            <nuxt-link :to="route">
+            <nuxt-link :to="localeRoute(route)">
               <span class="icon"><b-icon :icon="icon" size="is-small" /></span>
               <span>{{ label }}</span>
             </nuxt-link>
@@ -24,25 +26,27 @@
 <script>
 export default {
   name: 'UserPage',
-  data: () => ({
-    tabs: [
-      {
-        label: 'Profile',
-        route: { name: 'user-account-profile' },
-        icon: 'user',
-      },
-      {
-        label: 'Orders',
-        route: { name: 'user-account-orders' },
-        icon: 'user',
-      },
-    ],
-  }),
+  data() {
+    return {
+      tabs: [
+        {
+          label: this.$t('user.profile'),
+          route: { name: 'user-account-profile' },
+          icon: 'user',
+        },
+        {
+          label: this.$t('user.orders'),
+          route: { name: 'user-account-orders' },
+          icon: 'user',
+        },
+      ],
+    }
+  },
   middleware: [
     'auth',
     function ({ route, redirect }) {
       if (route.name === 'user-account')
-        redirect({ name: 'user-account-profile' })
+        redirect(this.localeRoute({ name: 'user-account-profile' }))
     },
   ],
 }

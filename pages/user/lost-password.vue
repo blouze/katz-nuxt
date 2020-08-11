@@ -3,11 +3,10 @@
     <div v-if="success">
       <div class="hero-body">
         <p class="subtitle is-3">
-          An email has been sent to you, click on the link to reset your
-          password.
+          {{ $t('auth.passwordResetEmailSent') }}
         </p>
         <nuxt-link class="button is-primary" :to="{ name: 'user-login' }">
-          Connexion
+          {{ $t('auth.login') }}
         </nuxt-link>
       </div>
     </div>
@@ -15,7 +14,7 @@
     <div v-else>
       <div class="hero-body">
         <h1 class="title is-1">
-          Lost password
+          {{ $t('auth.lostPassword') }}
         </h1>
 
         <div class="columns">

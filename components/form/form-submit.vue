@@ -16,7 +16,12 @@
 <script>
 export default {
   props: {
-    label: { type: String, default: 'Envoyer' },
+    label: {
+      type: String,
+      default() {
+        return this.$t('form.send')
+      },
+    },
     disabled: { type: Boolean, default: false },
     loading: { type: Boolean, default: false },
   },

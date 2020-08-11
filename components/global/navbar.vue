@@ -6,8 +6,8 @@
   >
     <div class="container">
       <div class="navbar-brand">
-        <nuxt-link :to="{ path: '/' }" class="navbar-item">
-          KATZ'S
+        <nuxt-link :to="localeRoute({ path: '/' })" class="navbar-item">
+          {{ $t('site.name') }}
           <!-- <img
           src="https://bulma.io/images/bulma-logo.png"
           width="112"
@@ -40,7 +40,7 @@
             v-for="({ to, text }, index) in links"
             :key="`nav-link-${index}`"
             class="navbar-item"
-            :to="to"
+            :to="localeRoute(to)"
           >
             {{ text }}
           </nuxt-link>
@@ -61,12 +61,15 @@
             <div class="buttons">
               <nuxt-link
                 class="button is-primary"
-                :to="{ name: 'user-register' }"
+                :to="localeRoute({ name: 'user-register' })"
               >
-                Sign up
+                {{ $t('auth.register') }}
               </nuxt-link>
-              <nuxt-link class="button is-light" :to="{ name: 'user-login' }">
-                Log in
+              <nuxt-link
+                class="button is-light"
+                :to="localeRoute({ name: 'user-login' })"
+              >
+                {{ $t('auth.login') }}
               </nuxt-link>
             </div>
           </div>
@@ -80,10 +83,12 @@
 
 <script>
 export default {
-  data: () => ({
-    links: [{ to: { name: 'products' }, text: 'Products' }],
-    menuOpen: false,
-  }),
+  data() {
+    return {
+      links: [{ to: { name: 'products' }, text: this.$t('products.title') }],
+      menuOpen: false,
+    }
+  },
   watch: {
     '$route.path'() {
       this.menuOpen = false

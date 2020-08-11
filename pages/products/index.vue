@@ -3,7 +3,7 @@
     <div class="level">
       <div class="level-left">
         <div class="level-item is-left">
-          <h1 class="title is-1">{{ title }}</h1>
+          <h1 class="title is-1">{{ $t('products.title') }}</h1>
         </div>
       </div>
 
@@ -26,8 +26,5 @@ export default {
   async asyncData({ $sanity, params }) {
     return await $sanity.fetch(query, params)
   },
-  data: () => ({
-    title: 'Products',
-  }),
 }
 </script>

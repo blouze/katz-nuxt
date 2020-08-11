@@ -3,16 +3,19 @@
     <a class="navbar-link">{{ user.username }}</a>
 
     <div class="navbar-dropdown is-right">
-      <nuxt-link class="navbar-item" :to="{ name: 'user-account' }">
+      <nuxt-link
+        class="navbar-item"
+        :to="localeRoute({ name: 'user-account-profile' })"
+      >
         <span class="icon"><b-icon icon="user" size="is-small" /></span>
-        <span>Profile</span>
+        <span>{{ $t('user.profile') }}</span>
       </nuxt-link>
 
       <hr class="navbar-divider" />
 
       <a class="navbar-item" @click="logout">
         <span class="icon"><b-icon icon="sign-out-alt" size="is-small" /></span>
-        <span>Logout</span>
+        <span>{{ $t('auth.logout') }}</span>
       </a>
     </div>
   </a>

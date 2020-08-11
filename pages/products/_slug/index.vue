@@ -24,10 +24,12 @@
           >
             <nuxt-link
               class="is-light"
-              :to="{
-                name: 'products-categories-slug',
-                params: { slug: category.slug.current },
-              }"
+              :to="
+                localeRoute({
+                  name: 'products-categories-slug',
+                  params: { slug: category.slug.current },
+                })
+              "
             >
               {{ category.title }}
             </nuxt-link>
@@ -37,10 +39,12 @@
         <div class="media">
           <div class="media-left">
             <nuxt-link
-              :to="{
-                name: 'products-brands-slug',
-                params: { slug: product.vendor.slug.current },
-              }"
+              :to="
+                localeRoute({
+                  name: 'products-brands-slug',
+                  params: { slug: product.vendor.slug.current },
+                })
+              "
             >
               <figure class="image is-48x48">
                 <sanity-image

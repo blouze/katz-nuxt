@@ -85,6 +85,8 @@ export default {
     '@nuxtjs/ngrok',
     // Doc: https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
+    // Doc: https://github.com/nuxt-community/apollo-module
+    'nuxt-i18n',
   ],
   /*
    ** Axios module configuration
@@ -143,7 +145,7 @@ export default {
       login: '/user/login',
       logout: '/',
       callback: false,
-      home: '/user/account/profile',
+      home: '/',
     },
     plugins: ['~/plugins/auth.js'],
   },
@@ -186,5 +188,18 @@ export default {
         httpEndpoint: `${process.env.BACKEND_URL}/graphql`,
       },
     },
+  },
+
+  i18n: {
+    locales: [
+      {
+        code: 'fr',
+        file: 'fr-FR.js',
+      },
+    ],
+    defaultLocale: 'fr',
+    strategy: 'prefix_except_default',
+    lazy: true,
+    langDir: 'lang/',
   },
 }
