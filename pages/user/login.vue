@@ -8,13 +8,13 @@
 
     <div class="columns">
       <login-form
-        class="column is-two-thirds"
+        class="column is-two-thirds is-half-widescreen"
         :disabled="submitted"
         :loading="submitted"
         @submit="submit"
       />
 
-      <div class="column is-third">
+      <div class="column is-half is-one-third-widescreen">
         <div v-if="errors">
           <p
             v-for="{ id, message } in errors"

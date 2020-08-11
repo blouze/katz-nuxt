@@ -2,7 +2,7 @@
   <section class="section">
     <div class="level">
       <div class="level-left">
-        <div class="level-item">
+        <div class="level-item is-left">
           <h1 class="title is-1">{{ title }}</h1>
         </div>
       </div>

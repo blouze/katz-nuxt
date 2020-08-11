@@ -3,14 +3,14 @@
     <fieldset :disabled="disabled">
       <form-input
         label="password"
-        :icon="['fas', 'lock']"
+        icon="lock"
         :validation="$v.password"
         password
       />
 
       <form-input
         label="confirmation"
-        :icon="['fas', 'lock']"
+        icon="lock"
         :validation="$v.passwordConfirmation"
         password
       />

@@ -20,20 +20,22 @@
 
         <div class="columns">
           <lost-password-form
-            class="column is-two-thirds"
+            class="column is-two-thirds is-half-widescreen"
             :disabled="submitted"
             :loading="submitted"
             @submit="submit"
           />
 
-          <div v-if="errors" class="column is-third">
-            <p
-              v-for="{ id, message } in errors"
-              :key="id"
-              class="has-text-danger"
-            >
-              {{ message }}
-            </p>
+          <div class="column is-half is-one-third-widescreen">
+            <div v-if="errors">
+              <p
+                v-for="{ id, message } in errors"
+                :key="id"
+                class="has-text-danger"
+              >
+                {{ message }}
+              </p>
+            </div>
           </div>
         </div>
       </div>

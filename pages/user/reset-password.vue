@@ -8,19 +8,26 @@
       </div>
     </section>
 
-    <section>
-      <ResetPasswordForm
+    <div class="columns">
+      <reset-password-form
+        class="column is-two-thirds is-half-widescreen"
         :disabled="submitted"
         :loading="submitted"
         @submit="submit"
       />
-    </section>
 
-    <section v-if="errors">
-      <p v-for="{ id, message } in errors" :key="id" class="has-text-danger">
-        {{ message }}
-      </p>
-    </section>
+      <div class="column is-half is-one-third-widescreen">
+        <div v-if="errors">
+          <p
+            v-for="{ id, message } in errors"
+            :key="id"
+            class="has-text-danger"
+          >
+            {{ message }}
+          </p>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 

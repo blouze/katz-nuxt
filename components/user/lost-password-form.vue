@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { required } from 'vuelidate/lib/validators'
+import { required, email as isEmail } from 'vuelidate/lib/validators'
 
 export default {
   name: 'LostPasswordForm',
@@ -30,7 +30,7 @@ export default {
   }),
 
   validations: {
-    email: { required },
+    email: { required, isEmail },
   },
 
   methods: {

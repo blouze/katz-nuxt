@@ -141,7 +141,7 @@ export default {
     },
     redirect: {
       login: '/user/login',
-      logout: '/user/login',
+      logout: '/',
       callback: false,
       home: '/user/account/profile',
     },
