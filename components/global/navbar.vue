@@ -41,8 +41,19 @@
             :key="`nav-link-${index}`"
             class="navbar-item"
             :to="to"
-            >{{ text }}
+          >
+            {{ text }}
           </nuxt-link>
+        </div>
+
+        <div class="navbar-item is-right">
+          <button class="button is-secondary snipcart-checkout">
+            <span class="icon">
+              <b-icon icon="shopping-bag" size="is-small" />
+            </span>
+            <span class="snipcart-total-price" />
+            <span class="badge is-secondary snipcart-items-count" />
+          </button>
         </div>
 
         <client-only class="navbar-end">
@@ -54,7 +65,7 @@
               >
                 Sign up
               </nuxt-link>
-              <nuxt-link class="button" :to="{ name: 'user-login' }">
+              <nuxt-link class="button is-light" :to="{ name: 'user-login' }">
                 Log in
               </nuxt-link>
             </div>
@@ -85,3 +96,8 @@ export default {
   },
 }
 </script>
+
+<style lang="stylus" scoped>
+.snipcart-checkout
+  border: 2px solid white
+</style>

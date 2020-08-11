@@ -1,10 +1,11 @@
 <template>
   <div>
-    <snipcart />
     <navbar />
     <div class="container" :style="{ 'min-height': '90vh' }">
       <nuxt />
     </div>
+    <page-footer />
+    <snipcart />
   </div>
 </template>
 

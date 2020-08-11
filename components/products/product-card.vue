@@ -1,5 +1,5 @@
 <template>
-  <div class="card is-shadowless has-background-white-bis">
+  <div class="card is-shadowless">
     <div class="card-image">
       <figure class="image">
         <sanity-image
@@ -11,6 +11,7 @@
         />
       </figure>
     </div>
+
     <div class="card-content">
       <div class="media">
         <div v-if="vendor" class="media-left">
@@ -20,15 +21,18 @@
               :alt="vendor.title"
               :width="96"
               :height="96"
-              bg="fafafa"
+              bg="ffffff"
               fit="fill"
             />
           </figure>
         </div>
+
         <div class="media-content">
           <p class="title is-5">{{ title }}</p>
-          <p class="subtitle is-5">
-            <span class="tag is-secondary"> {{ price }} € </span>
+          <p class="subtitle has-text-right">
+            <span class="tag is-secondary is-medium is-rounded">
+              {{ price }} €
+            </span>
           </p>
         </div>
       </div>

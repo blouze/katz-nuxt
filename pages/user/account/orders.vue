@@ -22,7 +22,9 @@
       </b-table-column>
 
       <b-table-column field="invoiceNumber" label="Reference" sortable>
-        {{ props.row.invoiceNumber }}
+        <a @click="toggleDetails(props.row)">
+          {{ props.row.invoiceNumber }}
+        </a>
       </b-table-column>
 
       <b-table-column field="description" label="Description">
@@ -64,13 +66,13 @@
 </template>
 
 <script>
-import orders from '~/apollo/queries/orders'
+import query from '~/apollo/queries/orders'
 
 export default {
   name: 'UserOrdersPage',
   apollo: {
     orders: {
-      query: orders,
+      query,
       variables() {
         return {}
       },

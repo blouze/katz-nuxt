@@ -3,6 +3,8 @@
     <h1 class="title is-1">{{ category.title }}</h1>
 
     <products-list :products="products" />
+
+    <p v-if="category.description">{{ category.description }}</p>
   </section>
 </template>
 

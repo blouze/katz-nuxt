@@ -14,27 +14,18 @@ export default {
 
   head: () => ({
     link: [
+      { rel: 'preconnect', href: 'https://app.snipcart.com' },
+      { rel: 'preconnect', href: 'https://cdn.snipcart.com' },
       {
         rel: 'stylesheet',
-        href: 'https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css',
+        href: 'https://cdn.snipcart.com/themes/v3.0.19/default/snipcart.css',
       },
     ],
     script: [
       {
-        src: 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js',
-      },
-      {
-        src: 'https://cdn.snipcart.com/scripts/2.0/snipcart.js',
-        // id: 'snipcart',
-        // 'data-autopop': 'false',
-        // 'data-api-key': process.env.snipcartApiKey,
+        src: 'https://cdn.snipcart.com/themes/v3.0.19/default/snipcart.js',
       },
     ],
   }),
 }
 </script>
-
-<style lang="stylus">
-.snip-layout
-  font-family: inherit
-</style>

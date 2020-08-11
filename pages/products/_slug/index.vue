@@ -61,8 +61,18 @@
           </div>
         </div>
 
+        <div class="content">
+          <block-content :blocks="product.body.en" />
+        </div>
+
         <div class="level">
-          <div class="level-left"></div>
+          <div class="level-left">
+            <client-only>
+              <product-availability :id="product._id" />
+            </client-only>
+            <!-- <starburst /> -->
+          </div>
+
           <div class="level-right">
             <div class="level-item">
               <buy-button v-bind="product" :url="productUrl" />
@@ -71,10 +81,6 @@
         </div>
       </div>
     </div>
-
-    <!-- <client-only>
-      <product-availability :id="product._id" />
-    </client-only> -->
   </section>
 </template>
 
@@ -88,7 +94,7 @@ export default {
   },
   computed: {
     productUrl() {
-      return `${process.dev ? 'https://4ee0bd65d7af.ngrok.io' : ''}${
+      return `${process.dev ? 'https://39c9f6d0d037.ngrok.io' : ''}${
         this.$route.path
       }`
     },

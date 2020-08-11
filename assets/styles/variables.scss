@@ -39,7 +39,7 @@ $colors: (
   "danger": ($danger, $danger-invert),
   "twitter": ($twitter, $twitter-invert),
   "secondary": ($secondary, $secondary-invert),
-  "primary-light": ($tiffany-blue, $tiffany-blue-invert),
+  "primary-light": ($light-cyan, $light-cyan-invert),
   "secondary-light": ($mellow-apricot, $mellow-apricot-invert),
 );
 
@@ -50,4 +50,3 @@ $link-focus-border: $primary;
 
 $family-sans-serif: "Assistant", sans-serif;
 $family-primary: $family-sans-serif;
-

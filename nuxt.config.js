@@ -48,7 +48,9 @@ export default {
    ** https://nuxtjs.org/guide/plugins
    */
   plugins: [
+    // { src: '~plugins/snipcart', mode: 'client' },
     { src: '~plugins/sanity' },
+    { src: '~plugins/sanity-block-component' },
     { src: '~plugins/vuelidate' },
     { src: '~plugins/date' },
   ],
@@ -168,8 +170,12 @@ export default {
         'faLock',
         'faSignOutAlt',
         'faShoppingCart',
+        'faShoppingBag',
+        'faCashRegister',
         'faAngleRight',
         'faArrowUp',
+        'faStepForward',
+        'faStepBackward',
       ],
     },
   },

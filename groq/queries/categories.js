@@ -14,6 +14,6 @@ export default groq`{
     }
   },
   "category": *[_type == 'category' && slug.current == $slug] {
-    title, parents[]-> { _id, title, slug }
+    title, description, parents[]-> { _id, title, slug }
   }[0]
 }`
