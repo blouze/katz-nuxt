@@ -1,10 +1,10 @@
 <template>
-  <div class="columns is-multiline">
+  <div class="columns is-multiline is-mobile is-variable is-0 is-2-tablet">
     <nuxt-link
       v-for="product in products"
       :key="product._id"
+      class="column is-half-mobile is-one-third-tablet is-one-quarter-widescreen is-one-fifth-fullhd"
       :to="`/products/${product.slug.current}`"
-      class="column is-half-tablet is-one-third-widescreen is-one-quarter-fullhd"
     >
       <product-card v-bind="product" class="product-card" />
     </nuxt-link>
@@ -24,7 +24,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.columns.is-variable .column {
+  padding: var(--columnGap);
+}
+
 a {
+  /* padding-top: 0; */
+  /* padding-bottom: 0; */
   border: 4px dashed WHITE;
   &,
   & .product-card,

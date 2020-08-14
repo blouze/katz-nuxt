@@ -16,7 +16,6 @@ export default {
     return {
       bodyAttrs: {
         class: 'has-navbar-fixed-top snipcart-overwrite',
-        // class: this.$auth.loggedIn ? 'has-navbar-fixed-top' : '',
       },
       htmlAttrs: {
         lang: 'fr-FR',

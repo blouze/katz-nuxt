@@ -1,11 +1,17 @@
 <template>
-  <section class="section">
-    <h1 class="title is-1">{{ category.title }}</h1>
+  <div>
+    <section class="section">
+      <h1 class="title is-1">{{ category.title }}</h1>
+    </section>
 
-    <products-list :products="products" />
+    <section class="section" style="padding: 3rem 0.3rem;">
+      <products-list :products="products" />
+    </section>
 
-    <p v-if="category.description">{{ category.description }}</p>
-  </section>
+    <section v-if="category.description" class="section">
+      <p>{{ category.description }}</p>
+    </section>
+  </div>
 </template>
 
 <script>

@@ -46,36 +46,38 @@
           </nuxt-link>
         </div>
 
-        <div class="navbar-item is-right">
-          <button class="button is-secondary snipcart-checkout">
-            <span class="icon">
-              <b-icon icon="shopping-bag" size="is-small" />
-            </span>
-            <span class="snipcart-total-price" />
-            <span class="badge is-secondary snipcart-items-count" />
-          </button>
-        </div>
-
-        <client-only class="navbar-end">
-          <div v-if="!$auth.loggedIn" class="navbar-item">
-            <div class="buttons">
-              <nuxt-link
-                class="button is-primary"
-                :to="localeRoute({ name: 'user-register' })"
-              >
-                {{ $t('auth.register') }}
-              </nuxt-link>
-              <nuxt-link
-                class="button is-light"
-                :to="localeRoute({ name: 'user-login' })"
-              >
-                {{ $t('auth.login') }}
-              </nuxt-link>
+        <div class="navbar-end">
+          <client-only>
+            <div v-show="$store.state.snipcart.loaded" class="navbar-item">
+              <button class="button is-secondary snipcart-checkout">
+                <span class="icon">
+                  <b-icon icon="shopping-bag" size="is-small" />
+                </span>
+                <span class="snipcart-total-price" />
+                <span class="badge is-secondary snipcart-items-count" />
+              </button>
             </div>
-          </div>
 
-          <user-menu v-else :user="$auth.user" />
-        </client-only>
+            <user-menu v-if="$auth.loggedIn" />
+
+            <div v-else class="navbar-item">
+              <div class="buttons">
+                <nuxt-link
+                  class="button is-primary"
+                  :to="localeRoute({ name: 'user-register' })"
+                >
+                  {{ $t('auth.register') }}
+                </nuxt-link>
+                <nuxt-link
+                  class="button is-light"
+                  :to="localeRoute({ name: 'user-login' })"
+                >
+                  {{ $t('auth.login') }}
+                </nuxt-link>
+              </div>
+            </div>
+          </client-only>
+        </div>
       </div>
     </div>
   </nav>
@@ -91,6 +93,9 @@ export default {
   },
   watch: {
     '$route.path'() {
+      this.menuOpen = false
+    },
+    '$auth.loggedIn'() {
       this.menuOpen = false
     },
   },

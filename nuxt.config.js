@@ -25,7 +25,9 @@ export default {
       },
     ],
     link: [
+      { rel: 'preconnect', href: process.env.BACKEND_URL },
       { rel: 'preconnect', href: 'https://cdn.jsdelivr.net' },
+      { rel: 'preconnect', href: 'https://cdn.sanity.io/' },
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
@@ -82,12 +84,15 @@ export default {
     '@nuxtjs/axios',
     // Doc: https://github.com/nuxt/content
     '@nuxt/content',
+    // Doc: https://auth.nuxtjs.org
     '@nuxtjs/auth',
-    '@nuxtjs/ngrok',
+    // '@nuxtjs/ngrok',
     // Doc: https://github.com/nuxt-community/apollo-module
     '@nuxtjs/apollo',
     // Doc: https://github.com/nuxt-community/apollo-module
     'nuxt-i18n',
+    // Doc: https://gitlab.com/broj42/nuxt-lazy-load#README
+    // 'nuxt-lazy-load',
   ],
   /*
    ** Axios module configuration
@@ -103,7 +108,9 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    // analyze: true,
+  },
 
   generate: {
     // exclude: [/user\/account/],
@@ -127,6 +134,7 @@ export default {
   auth: {
     strategies: {
       local: {
+        // autoFetchUser: false,
         endpoints: {
           login: {
             url: `${process.env.BACKEND_URL}/auth/local`,

@@ -1,6 +1,6 @@
 <template>
   <a ref="dropdown" class="navbar-item has-dropdown is-hoverable">
-    <a class="navbar-link">{{ user.username }}</a>
+    <a class="navbar-link">{{ $auth.user.username }}</a>
 
     <div class="navbar-dropdown is-right">
       <nuxt-link
@@ -24,13 +24,6 @@
 <script>
 export default {
   name: 'UserMenu',
-  props: {
-    user: {
-      type: Object,
-      required: true,
-      default: () => ({}),
-    },
-  },
   methods: {
     logout(e) {
       e.preventDefault()

@@ -2,20 +2,10 @@
   <div>
     <section class="section">
       <h1 class="title is-1">{{ vendor.title }}</h1>
+    </section>
 
-      <div class="columns is-multiline">
-        <nuxt-link
-          v-for="product in products"
-          :key="product._id"
-          :to="{
-            name: 'products-slug',
-            params: { slug: product.slug.current },
-          }"
-          class="column is-half-tablet is-one-third-desktop is-one-quarter-widescreen"
-        >
-          <ProductCard v-bind="product" />
-        </nuxt-link>
-      </div>
+    <section class="section" style="padding: 3rem 0.3rem;">
+      <products-list :products="products" />
     </section>
   </div>
 </template>

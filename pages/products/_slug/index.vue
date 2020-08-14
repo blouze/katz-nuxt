@@ -8,8 +8,8 @@
           <sanity-image
             :image="product.image"
             :alt="product.title"
-            :width="500"
-            :height="500"
+            :width="420"
+            :height="420"
             fit="fill"
           />
         </figure>
@@ -46,12 +46,12 @@
                 })
               "
             >
-              <figure class="image is-48x48">
+              <figure class="image is-64x64">
                 <sanity-image
                   :image="product.vendor.logo"
                   :alt="product.vendor.title"
-                  :width="96"
-                  :height="96"
+                  :width="64"
+                  :height="64"
                   fit="fill"
                 />
               </figure>
@@ -72,7 +72,7 @@
         <div class="level">
           <div class="level-left">
             <client-only>
-              <product-availability :id="product._id" />
+              <!-- <product-availability :id="product._id" /> -->
             </client-only>
             <!-- <starburst /> -->
           </div>

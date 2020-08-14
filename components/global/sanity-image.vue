@@ -1,5 +1,5 @@
 <template>
-  <img :src="imageUrl" :alt="altFromImage || alt" />
+  <img :src="src" :alt="altFromImage || alt" />
 </template>
 
 <script>
@@ -39,7 +39,7 @@ export default {
     altFromImage() {
       return this.image.alt
     },
-    imageUrl() {
+    src() {
       return this.$imgBuilder
         .image(this.image)
         .ignoreImageParams()

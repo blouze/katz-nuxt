@@ -1,11 +1,11 @@
 <template>
-  <div class="card is-shadowless">
+  <div class="card">
     <div class="card-image">
-      <figure class="image">
+      <figure class="image is-3by4">
         <sanity-image
           :image="image"
           :alt="title"
-          :width="400"
+          :width="300"
           :height="400"
           fit="fill"
         />
@@ -14,28 +14,28 @@
 
     <div class="card-content">
       <div class="media">
-        <div v-if="vendor" class="media-left">
+        <div class="media-content">
+          <p class="subtitle">
+            <span class="tag is-secondary is-small is-medium-tablet is-rounded">
+              {{ price }} €
+            </span>
+          </p>
+        </div>
+
+        <div v-if="vendor" class="media-right">
           <figure class="image is-48x48">
             <sanity-image
               :image="vendor.logo"
               :alt="vendor.title"
-              :width="96"
-              :height="96"
+              :width="48"
+              :height="48"
               bg="ffffff"
               fit="fill"
             />
           </figure>
         </div>
-
-        <div class="media-content">
-          <p class="title is-5">{{ title }}</p>
-          <p class="subtitle has-text-right">
-            <span class="tag is-secondary is-medium is-rounded">
-              {{ price }} €
-            </span>
-          </p>
-        </div>
       </div>
+      <p class="title is-6">{{ title }}</p>
     </div>
   </div>
 </template>
@@ -54,4 +54,8 @@ export default {
 }
 </script>
 
-<style lang="stylus" scoped></style>
+<style lang="stylus" scoped>
+.card-content {
+  padding: 0.8rem;
+}
+</style>

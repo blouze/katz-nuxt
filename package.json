@@ -12,12 +12,9 @@
     "test": "jest"
   },
   "dependencies": {
-    "@nuxt/content": "^1.5.0",
     "@nuxtjs/apollo": "4.0.1-rc.1",
     "@nuxtjs/auth": "4.9.1",
     "@nuxtjs/axios": "^5.12.0",
-    "@sanity/client": "1.149.18",
-    "@sanity/image-url": "0.140.19",
     "date-fns": "2.15.0",
     "graphql-tag": "2.11.0",
     "groq": "1.149.16",
@@ -30,12 +27,15 @@
   "devDependencies": {
     "@creativebulma/bulma-badge": "1.0.1",
     "@fortawesome/free-solid-svg-icons": "5.14.0",
+    "@nuxt/content": "^1.5.0",
     "@nuxtjs/eslint-config": "^3.1.0",
     "@nuxtjs/eslint-module": "^2.0.0",
     "@nuxtjs/fontawesome": "1.1.2",
     "@nuxtjs/ngrok": "1.2.9",
     "@nuxtjs/pwa": "3.0.0-beta.20",
     "@nuxtjs/style-resources": "1.0.0",
+    "@sanity/client": "1.149.18",
+    "@sanity/image-url": "0.140.19",
     "@vue/test-utils": "^1.0.3",
     "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "^10.1.0",
