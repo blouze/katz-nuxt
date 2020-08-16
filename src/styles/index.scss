@@ -1,0 +1,11 @@
+// Import Bulma's core
+// @import "./variables";
+
+// Import Bulma and Buefy styles
+@import "~bulma";
+@import "~buefy/src/scss/buefy";
+
+$scheme-main: $white;
+@import "~@creativebulma/bulma-badge";
+
+@import "./snipcart-overwrite.scss";

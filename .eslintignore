@@ -6,15 +6,6 @@ dist
 
 # hidden
 .nuxt
-.env
 
 # files
-sitemap.xml.gz
-sitemap.xml
 sw.js
-
-# logs
-*.log
-
-# system
-.DS_Store
