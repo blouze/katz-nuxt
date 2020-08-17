@@ -16,6 +16,7 @@
     "nuxt-i18n": "6.13.8",
     "nuxt-stack": "0.8.1",
     "sanity-blocks-vue-component": "0.1.0",
+    "sass-loader": "9.0.3",
     "vuelidate": "0.7.5"
   },
   "scripts": {
