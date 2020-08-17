@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section has-background-white">
     <h1 class="title is-2">{{ product.title }}</h1>
 
     <div class="columns">
@@ -21,15 +21,14 @@
         </figure>
       </div>
 
-      <div class="column is-two-third">
+      <div class="column is-two-thirds is-half-widescreen">
         <b-taglist v-if="product.categories.length">
           <b-tag
             v-for="category in product.categories"
             :key="category._id"
-            class="is-rounded is-medium"
+            class="is-primary-light is-rounded is-medium"
           >
             <nuxt-link
-              class="is-light"
               :to="
                 localeRoute({
                   name: 'products-categories-slug',

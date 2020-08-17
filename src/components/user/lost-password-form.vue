@@ -3,8 +3,8 @@
     <fieldset :disabled="disabled">
       <form-input
         id="email"
-        label="email"
-        placeholder="email"
+        :label="$t('auth.email')"
+        :placeholder="$t('auth.email')"
         icon="user"
         :validation="$v.email"
       />

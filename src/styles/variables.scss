@@ -50,10 +50,12 @@ $link-focus-border: $primary;
 $family-sans-serif: "Assistant", sans-serif;
 $family-primary: $family-sans-serif;
 
+$body-background-color: $white-ter;
+
 a.image-link {
     /* padding-top: 0; */
     /* padding-bottom: 0; */
-    border: 4px dashed WHITE;
+    border: 4px dashed $body-background-color;
     &,
     & .product-card,
     & .product-card .card .card-content {
@@ -62,5 +64,14 @@ a.image-link {
 
     &:hover {
         border-color: $mellow-apricot;
+    }
+}
+
+.navbar-brand {
+    flex-grow: 1;
+    flex-shrink: 1;
+
+    .autocomplete {
+        flex-grow: 1;
     }
 }

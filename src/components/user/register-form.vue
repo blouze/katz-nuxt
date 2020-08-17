@@ -3,22 +3,23 @@
     <fieldset :disabled="disabled">
       <form-input
         id="username"
-        label="username"
+        :label="$t('auth.username')"
+        :placeholder="$t('auth.username')"
         icon="user"
         :validation="$v.username"
       />
 
       <form-input
         id="email"
-        label="email"
-        placeholder="e-mail"
+        :label="$t('auth.email')"
+        :placeholder="$t('auth.email')"
         icon="envelope"
         :validation="$v.email"
       />
 
       <form-input
         id="password"
-        label="password"
+        :label="$t('auth.password')"
         icon="lock"
         :validation="$v.password"
         password

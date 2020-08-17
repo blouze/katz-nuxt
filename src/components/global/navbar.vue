@@ -1,89 +1,66 @@
 <template>
-  <nav
-    class="navbar is-fixed-top is-brand"
-    role="navigation"
-    aria-label="main navigation"
+  <b-navbar
+    fixed-top
+    type="is-brand sync"
+    mobile-burger
+    wrapper-class="container is-expanded"
   >
-    <div class="container">
-      <div class="navbar-brand">
-        <nuxt-link :to="localeRoute({ path: '/' })" class="navbar-item">
-          {{ $t("site.name") }}
-          <!-- <img
-          src="https://bulma.io/images/bulma-logo.png"
-          width="112"
-          height="28"
-        /> -->
-        </nuxt-link>
+    <template slot="brand">
+      <b-navbar-item tag="router-link" :to="localeRoute({ path: '/' })">
+        {{ $t("site.name") }}
+      </b-navbar-item>
 
-        <a
-          role="button"
-          class="navbar-burger burger"
-          :class="{ 'is-active': menuOpen }"
-          aria-label="menu"
-          aria-expanded="false"
-          data-target="navbarBasicExample"
-          @click="menuOpen = !menuOpen"
-        >
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-          <span aria-hidden="true"></span>
-        </a>
-      </div>
+      <b-navbar-item tag="div" class="is-expanded">
+        <search-input />
+      </b-navbar-item>
+    </template>
 
-      <div
-        id="navbarBasicExample"
-        class="navbar-menu"
-        :class="{ 'is-active': menuOpen }"
+    <template slot="start">
+      <b-navbar-item
+        v-for="({ to, text }, index) in links"
+        :key="`nav-link-${index}`"
+        expanded
+        :to="localeRoute(to)"
+        tag="nuxt-link"
       >
-        <div class="navbar-start">
-          <nuxt-link
-            v-for="({ to, text }, index) in links"
-            :key="`nav-link-${index}`"
-            class="navbar-item"
-            :to="localeRoute(to)"
+        {{ text }}
+      </b-navbar-item>
+    </template>
+
+    <template slot="end">
+      <client-only>
+        <b-navbar-item tag="div">
+          <b-button
+            type="is-secondary snipcart-checkout"
+            icon-left="shopping-bag"
+            :loading="!$store.state.snipcart.loaded"
           >
-            {{ text }}
-          </nuxt-link>
-        </div>
+            <span class="snipcart-total-price" />
+            <span class="badge is-secondary snipcart-items-count" />
+          </b-button>
+        </b-navbar-item>
 
-        <div class="navbar-end">
-          <client-only>
-            <div class="navbar-item">
-              <button
-                class="button is-secondary snipcart-checkout"
-                :class="{ 'is-loading': !$store.state.snipcart.loaded }"
-              >
-                <span class="icon">
-                  <b-icon icon="shopping-bag" size="is-small" />
-                </span>
-                <span class="snipcart-total-price" />
-                <span class="badge is-secondary snipcart-items-count" />
-              </button>
-            </div>
+        <user-menu v-if="$auth.loggedIn" />
 
-            <user-menu v-if="$auth.loggedIn" />
-
-            <div v-else class="navbar-item">
-              <div class="buttons">
-                <nuxt-link
-                  class="button is-primary"
-                  :to="localeRoute({ name: 'user-register' })"
-                >
-                  {{ $t("auth.register") }}
-                </nuxt-link>
-                <nuxt-link
-                  class="button is-light"
-                  :to="localeRoute({ name: 'user-login' })"
-                >
-                  {{ $t("auth.login") }}
-                </nuxt-link>
-              </div>
-            </div>
-          </client-only>
-        </div>
-      </div>
-    </div>
-  </nav>
+        <b-navbar-item v-else tag="div" class="buttons">
+          <b-button
+            type="is-primary"
+            tag="nuxt-link"
+            :to="localeRoute({ name: 'user-register' })"
+          >
+            {{ $t("auth.register") }}
+          </b-button>
+          <b-button
+            type="is-light"
+            tag="nuxt-link"
+            :to="localeRoute({ name: 'user-login' })"
+          >
+            {{ $t("auth.login") }}
+          </b-button>
+        </b-navbar-item>
+      </client-only>
+    </template>
+  </b-navbar>
 </template>
 
 <script>

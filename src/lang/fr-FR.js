@@ -26,6 +26,10 @@ export default {
     lostPassword: "Mot de passe oublié ?",
     passwordResetEmailSent:
       "An email has been sent to you, click on the link to reset your password.",
+    email: "Email",
+    username: "Identifiant",
+    identifier: "Identifiant",
+    password: "Mot de passe",
   },
   form: {
     send: "Envoyer",

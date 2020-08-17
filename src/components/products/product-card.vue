@@ -1,5 +1,5 @@
 <template>
-  <div class="card">
+  <div class="card has-background-white-bis">
     <div class="card-image">
       <figure class="image is-3by4">
         <sanity-image
@@ -36,6 +36,7 @@
               :width="48"
               :height="48"
               :sizes="[{ media: 375, width: 48 }]"
+              bg="fafafa"
               fit="fill"
             />
           </figure>

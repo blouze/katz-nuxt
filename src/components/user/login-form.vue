@@ -3,15 +3,15 @@
     <fieldset :disabled="disabled">
       <form-input
         id="identifier"
-        label="identifier"
-        placeholder="identifier"
+        :label="$t('auth.identifier')"
+        :placeholder="$t('auth.identifier')"
         icon="user"
         :validation="$v.identifier"
       />
 
       <form-input
         id="password"
-        label="password"
+        :label="$t('auth.password')"
         icon="lock"
         :validation="$v.password"
         password

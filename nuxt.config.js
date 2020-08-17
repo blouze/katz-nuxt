@@ -59,6 +59,8 @@ export default {
       icons: {
         solid: [
           'faUser',
+          'faSearch',
+          'faTimesCircle',
           'faEnvelope',
           'faExclamationTriangle',
           'faLock',

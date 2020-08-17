@@ -5,7 +5,7 @@
       <nuxt />
     </div>
     <page-footer />
-    <snipcart class="has-navbar-fixed-top" />
+    <snipcart />
   </div>
 </template>
 
