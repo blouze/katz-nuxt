@@ -6,7 +6,10 @@
           An email has been sent to you, click on the link to confirm your
           account.
         </p>
-        <nuxt-link class="button is-primary" :to="{ name: 'user-login' }">
+        <nuxt-link
+          class="button is-primary"
+          :to="localeRoute({ name: 'user-login' })"
+        >
           Connexion
         </nuxt-link>
       </div>

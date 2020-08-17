@@ -31,7 +31,7 @@ export default {
     ["@nuxtjs/auth", {
       strategies: {
         local: {
-          // autoFetchUser: false,
+          autoFetchUser: false,
           endpoints: {
             login: {
               url: `${process.env.BACKEND_URL}/auth/local`,
