@@ -13,28 +13,28 @@
 
     <div v-else>
       <div class="hero-body">
-        <h1 class="title is-1">
+        <h1 class="title is-2">
           {{ $t("auth.lostPassword") }}
         </h1>
+      </div>
 
-        <div class="columns">
-          <lost-password-form
-            class="column is-two-thirds is-half-widescreen"
-            :disabled="submitted"
-            :loading="submitted"
-            @submit="submit"
-          />
+      <div class="columns">
+        <lost-password-form
+          class="column is-two-thirds is-half-widescreen"
+          :disabled="submitted"
+          :loading="submitted"
+          @submit="submit"
+        />
 
-          <div class="column is-half is-one-third-widescreen">
-            <div v-if="errors">
-              <p
-                v-for="{ id, message } in errors"
-                :key="id"
-                class="has-text-danger"
-              >
-                {{ message }}
-              </p>
-            </div>
+        <div class="column is-half is-one-third-widescreen">
+          <div v-if="errors">
+            <p
+              v-for="{ id, message } in errors"
+              :key="id"
+              class="has-text-danger"
+            >
+              {{ message }}
+            </p>
           </div>
         </div>
       </div>
@@ -56,6 +56,11 @@ export default {
         params
       )
     },
+  },
+  head() {
+    return {
+      title: this.$t("auth.lostPassword"),
+    }
   },
 }
 </script>

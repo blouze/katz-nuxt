@@ -3,42 +3,41 @@
     <div v-if="success">
       <div class="hero-body">
         <p class="subtitle is-3">
-          An email has been sent to you, click on the link to confirm your
-          account.
+          {{ $t("auth.passwordResetEmailSent") }}
         </p>
         <nuxt-link
           class="button is-primary"
           :to="localeRoute({ name: 'user-login' })"
         >
-          Connexion
+          {{ $t("auth.login") }}
         </nuxt-link>
       </div>
     </div>
 
     <div v-else>
       <div class="hero-body">
-        <h1 class="title is-1">
-          Inscription
+        <h1 class="title is-2">
+          {{ $t("auth.register") }}
         </h1>
+      </div>
 
-        <div class="columns">
-          <register-form
-            class="column is-two-thirds is-half-widescreen"
-            :disabled="submitted"
-            :loading="submitted"
-            @submit="submit"
-          />
+      <div class="columns">
+        <register-form
+          class="column is-two-thirds is-half-widescreen"
+          :disabled="submitted"
+          :loading="submitted"
+          @submit="submit"
+        />
 
-          <div class="column is-half is-one-third-widescreen">
-            <div v-if="errors">
-              <p
-                v-for="{ id, message } in errors"
-                :key="id"
-                class="has-text-danger"
-              >
-                {{ message }}
-              </p>
-            </div>
+        <div class="column is-half is-one-third-widescreen">
+          <div v-if="errors">
+            <p
+              v-for="{ id, message } in errors"
+              :key="id"
+              class="has-text-danger"
+            >
+              {{ message }}
+            </p>
           </div>
         </div>
       </div>
@@ -60,6 +59,11 @@ export default {
         params
       )
     },
+  },
+  head() {
+    return {
+      title: this.$t("auth.register"),
+    }
   },
 }
 </script>

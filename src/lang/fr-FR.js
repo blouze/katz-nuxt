@@ -1,6 +1,7 @@
 export default {
   site: {
     name: "KATZ's",
+    home: "Accueil",
   },
   products: {
     title: "Produits",
@@ -22,14 +23,16 @@ export default {
   auth: {
     login: "Connexion",
     logout: "Déconnexion",
-    register: "S'inscrire",
+    register: "Inscription",
     lostPassword: "Mot de passe oublié ?",
     passwordResetEmailSent:
       "An email has been sent to you, click on the link to reset your password.",
+    resetPassword: "Réinitialisation du mot de passe",
     email: "Email",
     username: "Identifiant",
     identifier: "Identifiant",
     password: "Mot de passe",
+    passwordConfirmation: "Confirmer le mot de passe",
   },
   form: {
     send: "Envoyer",

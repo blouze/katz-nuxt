@@ -81,10 +81,10 @@ export default {
     scss: ["styles/variables.scss"]
   },
   stack: {
-    name: "Nuxt Stack",
-    host: "https://nuxtstack.org/",
-    description: "Stacks of goodness for Nuxt",
-    keywords: ["nuxt", "stack"],
+    name: "KATZ",
+    host: "https://katz.netlify.app",
+    description: "KATZ's boutique",
+    keywords: ["katz", "boutique"],
     backgroundColor: "#FFFFFF",
     themeColor: "#4FC08D",
     preconnect: [

@@ -14,5 +14,11 @@
 </template>
 
 <script>
-export default {}
+export default {
+  head() {
+    return {
+      title: this.$t("site.home"),
+    }
+  },
+}
 </script>

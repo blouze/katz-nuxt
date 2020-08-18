@@ -1,8 +1,8 @@
 <template>
   <section class="section hero is-small">
     <div class="hero-body">
-      <h1 class="title is-1">
-        Connexion
+      <h1 class="title is-2">
+        {{ $t("auth.login") }}
       </h1>
     </div>
 
@@ -28,9 +28,9 @@
     </div>
 
     <p>
-      <nuxt-link :to="localeRoute({ name: 'user-lost-password' })"
-        >Mot de passe oublié ?</nuxt-link
-      >
+      <nuxt-link :to="localeRoute({ name: 'user-lost-password' })">
+        {{ $t("auth.lostPassword") }}
+      </nuxt-link>
     </p>
   </section>
 </template>
@@ -52,6 +52,11 @@ export default {
           this.$buefy.snackbar.open("Vous êtes connecté.")
         })
     },
+  },
+  head() {
+    return {
+      title: this.$t("auth.login"),
+    }
   },
 }
 </script>

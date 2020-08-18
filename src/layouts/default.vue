@@ -14,6 +14,7 @@ export default {
   name: "DefaultLayout",
   head() {
     return {
+      titleTemplate: `%s - ${this.$t("site.name")}`,
       bodyAttrs: {
         class: "has-navbar-fixed-top snipcart-overwrite",
       },

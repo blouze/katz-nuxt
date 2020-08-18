@@ -1,12 +1,10 @@
 <template>
-  <div>
-    <section class="section hero is-small">
-      <div class="hero-body">
-        <h1 class="title is-1">
-          Reset password
-        </h1>
-      </div>
-    </section>
+  <section class="section hero is-small">
+    <div class="hero-body">
+      <h1 class="title is-2">
+        {{ $t("auth.resetPassword") }}
+      </h1>
+    </div>
 
     <div class="columns">
       <reset-password-form
@@ -28,7 +26,7 @@
         </div>
       </div>
     </div>
-  </div>
+  </section>
 </template>
 
 <script>

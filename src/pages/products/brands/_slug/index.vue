@@ -18,5 +18,10 @@ export default {
   async asyncData({ $sanity, params }) {
     return await $sanity.fetch(query, params)
   },
+  head() {
+    return {
+      title: this.vendor.title,
+    }
+  },
 }
 </script>

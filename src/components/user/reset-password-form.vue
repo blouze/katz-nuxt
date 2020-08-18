@@ -2,14 +2,16 @@
   <form @submit="checkForm">
     <fieldset :disabled="disabled">
       <form-input
-        label="password"
+        id="password"
+        :label="$t('auth.password')"
         icon="lock"
         :validation="$v.password"
         password
       />
 
       <form-input
-        label="confirmation"
+        id="passwordConfirmation"
+        :label="$t('auth.passwordConfirmation')"
         icon="lock"
         :validation="$v.passwordConfirmation"
         password
